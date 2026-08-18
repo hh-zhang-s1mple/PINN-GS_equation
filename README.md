@@ -1,4 +1,4 @@
-# PINN-GS方程：物理信息神经网络求解托卡马克 Grad-Shafranov 方程
+# 物理信息神经网络（PINN）求解托卡马克等离子体 Grad-Shafranov 方程
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c)](https://pytorch.org/)
