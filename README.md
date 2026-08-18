@@ -6,22 +6,7 @@
 
 本项目使用**物理信息神经网络（Physics-Informed Neural Network, PINN）**求解柱坐标下的 Grad-Shafranov（GS）方程，实现圆形截面托卡马克的等离子体平衡重构。项目同时提供有限差分（FD）广义特征值参考解，用于验证 PINN 结果的正确性。
 
----
 
-## 目录
-
-- [项目背景](#项目背景)
-- [物理模型](#物理模型)
-- [项目结构](#项目结构)
-- [环境依赖](#环境依赖)
-- [快速开始](#快速开始)
-- [使用说明](#使用说明)
-- [关键结果](#关键结果)
-- [自洽性分析](#自洽性分析)
-- [规范与合规检查](#规范与合规检查)
-- [许可证](#许可证)
-
----
 
 ## 项目背景
 
@@ -76,36 +61,6 @@ p'(\psi) = \alpha \cdot \psi, \qquad (f^2)'(\psi) = \beta \cdot \psi
 
 ---
 
-## 项目结构
-
-```
-PINN-GS方程/
-├── gs_pinn.py              # PINN 主程序（网络定义、PDE残差、训练、绘图）
-├── gs_reference.py         # 有限差分参考解（广义特征值法 + q(ψ) 积分）
-├── compliance_check.py     # 规范合规自动检查脚本
-├── make_doc_figures.py     # 教学文档插图生成（读取日志与 npz 数据）
-├── requirements.txt        # Python 依赖清单
-├── training_log_phase1.txt          # 阶段一训练日志（500 步导数验证）
-├── training_log_phase2.txt          # 阶段二训练日志
-├── training_log_phase2_ab11.txt     # α=β=1 运行日志（无精确解 → 折中地板）
-├── training_log_phase2_consistent.txt # α=2.0,β=1.0 自洽运行日志
-├── figures/                # 运行时生成：训练输出图与 npz 数据
-│   ├── fig1_psi.png        # (a) ψ 等值线云图
-│   ├── fig2_equator.png    # (b) 赤道面 ψ(R) 剖面
-│   ├── fig3_residual.png   # (c) PDE 残差空间分布
-│   ├── fig4_q.png          # (d) 安全因子 q(ψ)
-│   └── *.npz               # 网格数据（供对比与文档使用）
-└── doc_figures/            # 运行时生成：文档对比插图
-    ├── loss_curves.png
-    ├── lambda_scan.png
-    ├── pinn_vs_ref.png
-    ├── q_compare.png
-    └── residual_compare.png
-```
-
-> `figures/` 和 `doc_figures/` 目录在程序运行时自动创建。
-
----
 
 ## 环境依赖
 
