@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""compliance_check.py —— 对照《提示词.txt》自动检查 gs_pinn.py 是否合规
-
+"""compliance_check.py 
 用法：python compliance_check.py
 退出码 0 = 全部通过；1 = 存在未通过项（打印 FAIL 明细）。
 """
