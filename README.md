@@ -19,12 +19,11 @@
 PINN-GS方程/
 ├── gs_pinn.py           # PINN 主程序（网络、PDE残差、训练、绘图）
 ├── gs_reference.py      # FD 参考解（广义特征值法 + q(ψ) 积分）
-├── compliance_check.py  # 规范合规自动检查
 ├── requirements.txt     # 依赖清单
 └── training_log_*.txt   # 训练日志
 ```
 
-运行时自动生成 `figures/`（结果图与 npz 数据）和 `doc_figures/`（文档对比插图）。
+运行时自动生成 `figures/`（结果图与 npz 数据）和 `doc_figures/`。
 
 ## 环境依赖
 
@@ -73,13 +72,7 @@ python gs_reference.py scan       # 扫描 α 找 λ₁=1 的自洽值
 | 磁轴 ψ(2.0, 0) | 0.9880（目标 1.0） |
 | 边界损失 | ≈ 4.2×10⁻⁵ |
 
-## 合规检查
 
-```bash
-python compliance_check.py
-```
-
-自动检查网络结构、采样方式、激活函数、损失权重、行数限制等 20+ 项规范，退出码 0 为全部通过。
 
 ## 许可证
 
